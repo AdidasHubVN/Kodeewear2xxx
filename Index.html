@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIDAS VAULT • Hàng Chính Hãng 2026 | Shopee Affiliate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --adidas-red: #E31837;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-img {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+        }
+
+        .nav-active {
+            color: white;
+            border-bottom: 2px solid #E31837;
+        }
+
+        .category-chip {
+            transition: all 0.2s ease;
+        }
+        
+        .category-chip.active {
+            background-color: #E31837;
+            color: white;
+            border-color: #E31837;
+        }
+
+        .adidas-gradient {
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+        }
+
+        .glass {
+            background: rgba(255,255,255, 0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255, 0.1);
+        }
+
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
+                        0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        .price-tag {
+            font-feature-settings: "tnum";
+        }
+
+        .product-grid {
+            scrollbar-width: thin;
+            scrollbar-color: #27272a #18181b;
+        }
+
+        .shopee-btn {
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shopee-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            transition: 0.6s;
+        }
+        
+        .shopee-btn:hover::after {
+            left: 200%;
+        }
+
+        .trend-badge {
+            background: linear-gradient(to right, #E31837, #ff4d6d);
+            box-shadow: 0 0 15px rgba(227, 24, 55, 0.5);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Weather/Clock widget */
+        #weather-clock {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #a1a1aa;
+            background: rgba(39,39,42,0.8);
+            border: 1px solid rgba(63,63,70,0.6);
+            border-radius: 20px;
+            padding: 5px 14px;
+            backdrop-filter: blur(8px);
+            white-space: nowrap;
+        }
+        #weather-clock .clock { color: #fff; font-weight: 600; font-family: 'Space Grotesk', monospace; letter-spacing: -0.5px; }
+        #weather-clock .sep { color: #52525b; }
+        #weather-clock .weather-temp { color: #34d399; font-weight: 600; }
+        #weather-clock .weather-desc { color: #a1a1aa; }
+
+        /* Flash Sale Banner */
+        .flash-sale-bar {
+            background: linear-gradient(90deg, #E31837 0%, #ff1744 40%, #E31837 100%);
+            background-size: 200% auto;
+            animation: shimmerBg 3s linear infinite;
+        }
+        @keyframes shimmerBg {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        .countdown-box {
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+            min-width: 2.2ch;
+            text-align: center;
+        }
+
+        /* Shopee orange button */
+        .shopee-orange {
+            background: linear-gradient(135deg, #EE4D2D, #ff7337);
+            box-shadow: 0 4px 15px rgba(238,77,45,0.35);
+        }
+        .shopee-orange:hover {
+            background: linear-gradient(135deg, #d63f22, #ee5d24);
+        }
+
+        /* Original price strikethrough */
+        .original-price {
+            text-decoration: line-through;
+            color: #71717a;
+            font-size: 0.78rem;
+        }
+        .discount-badge {
+            background: #E31837;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+
+        /* Hot products glow */
+        .product-card.hot-product {
+            border-color: rgba(227,24,55,0.35);
+        }
+        .product-card.hot-product::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(227,24,55,0.5), transparent 60%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Sticky CTA bar (mobile) */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(9,9,11,0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(63,63,70,0.5);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        @media (min-width: 768px) { .sticky-cta { display: none; } }
+
+        /* Pulse dot animation */
+        @keyframes pulse-red {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(227,24,55,0.7); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(227,24,55,0); }
+        }
+        .pulse-red { animation: pulse-red 1.5s infinite; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+
+    <!-- FLASH SALE TOP BAR -->
+    <div class="flash-sale-bar text-white py-2 px-4 text-center text-sm font-semibold flex items-center justify-center gap-x-3 flex-wrap gap-y-1">
+        <span class="flex items-center gap-x-1.5">
+            <span class="w-2 h-2 bg-white rounded-full pulse-red inline-block"></span>
+            🔥 FLASH SALE HÔM NAY
+        </span>
+        <span class="opacity-80">•</span>
+        <span class="flex items-center gap-x-2 text-white/90">
+            Kết thúc sau:
+            <span class="flex items-center gap-x-1">
+                <span class="countdown-box" id="cd-h">00</span>
+                <span class="font-bold">:</span>
+                <span class="countdown-box" id="cd-m">00</span>
+                <span class="font-bold">:</span>
+                <span class="countdown-box" id="cd-s">00</span>
+            </span>
+        </span>
+        <span class="opacity-80">•</span>
+        <span class="text-yellow-300 text-xs font-bold tracking-wide">⚡ FREESHIP ĐƠN TỪ 150K</span>
+    </div>
+    <nav class="sticky top-0 z-50 bg-zinc-950/95 backdrop-blur-xl border-b border-zinc-800">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-inner">
+                        <span class="text-zinc-950 font-black text-3xl tracking-tighter" style="font-family: 'Space Grotesk', sans-serif;">A</span>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-x-1.5">
+                            <span class="font-display text-3xl font-semibold tracking-tighter">ADIDAS</span>
+                            <span class="text-xs font-mono px-2 py-0.5 rounded bg-[#E31837]/20 text-[#E31837] border border-[#E31837]/40">VAULT</span>
+                        </div>
+                        <p class="text-[10px] text-zinc-500 -mt-1 tracking-[2px]">OFFICIAL AFFILIATE • 2026</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm">
+                    <a href="#" class="hover:text-white transition-colors">Bộ sưu tập</a>
+                    <a href="#" class="hover:text-white transition-colors">Xu hướng 2026</a>
+                    <a href="#" class="hover:text-white transition-colors">Hướng dẫn mua</a>
+                </div>
+
+                <!-- Weather + Clock Widget -->
+                <div id="weather-clock" class="hidden lg:flex">
+                    <i class="fa-solid fa-clock text-zinc-500 text-xs"></i>
+                    <span class="clock" id="wc-time">--:--</span>
+                    <span class="sep">|</span>
+                    <span id="wc-icon">⛅</span>
+                    <span class="weather-temp" id="wc-temp">--°</span>
+                    <span class="weather-desc" id="wc-desc">Loading...</span>
+                </div>
+
+                <!-- Search + Actions -->
+                <div class="flex items-center gap-x-3">
+                    <!-- Search -->
+                    <div class="relative w-72 hidden lg:block">
+                        <input id="search-input" 
+                               type="text" 
+                               placeholder="Tìm áo, giày, túi, jersey..." 
+                               class="w-full bg-zinc-900 border border-zinc-700 focus:border-zinc-400 transition-colors pl-10 pr-4 py-2.5 text-sm rounded-3xl placeholder:text-zinc-500 outline-none">
+                        <i class="fa-solid fa-search absolute left-4 top-3.5 text-zinc-500"></i>
+                    </div>
+                    
+                    <!-- Mobile Search Icon -->
+                    <button onclick="document.getElementById('search-input').focus()" 
+                            class="lg:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-2xl transition-colors">
+                        <i class="fa-solid fa-search text-lg"></i>
+                    </button>
+
+                    <button onclick="showContactModal()"
+                            class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:bg-zinc-900 transition-all rounded-3xl flex items-center gap-x-2">
+                        <i class="fa-solid fa-headset"></i>
+                        <span class="hidden md:inline">Hỗ trợ</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-8">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-x-2 px-4 h-8 rounded-3xl bg-zinc-900 border border-zinc-700 text-xs tracking-widest mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="font-medium text-emerald-400">ADIDAS VAULT • CẬP NHẬT 2026</span>
+                </div>
+                
+                <h1 class="font-display text-6xl md:text-7xl leading-[0.95] tracking-tighter font-semibold">
+                    ADIDAS<br>
+                    VAULT.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-400">ĐẲNG CẤP 2026.</span>
+                </h1>
+                
+                <p class="mt-6 max-w-md text-xl text-zinc-400">
+                    Hàng chính hãng 100% • Giao siêu tốc Shopee • 
+                    Bộ sưu tập mới nhất cho mùa 2026
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 mt-8">
+                    <button onclick="document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' })" 
+                            class="shopee-btn group flex items-center justify-center gap-x-3 bg-[#E31837] hover:bg-red-700 active:bg-red-800 transition-all text-white font-semibold px-9 h-14 rounded-3xl text-base shadow-xl shadow-red-950/50">
+                        <span>Khám phá ngay</span>
+                        <i class="fa-solid fa-arrow-right group-active:translate-x-1 transition-transform"></i>
+                    </button>
+                    
+                    <button onclick="window.open('https://shopee.vn/adidas_official_store_vn', '_blank', 'noopener')"
+                            class="flex items-center justify-center gap-x-3 border border-zinc-700 hover:bg-zinc-900 transition-all font-medium px-8 h-14 rounded-3xl text-base">
+                        <i class="fa-brands fa-shopify"></i>
+                        <span>Xem trên Shopee</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-x-8 mt-8 text-sm">
+                    <div class="flex -space-x-2">
+                        <div class="w-7 h-7 bg-zinc-700 rounded-full border border-zinc-800 overflow-hidden"><img src="https://picsum.photos/id/1005/28/28" class="object-cover"></div>
+                        <div class="w-7 h-7 bg-zinc-700 rounded-full border border-zinc-800 overflow-hidden"><img src="https://picsum.photos/id/1011/28/28" class="object-cover"></div>
+                        <div class="w-7 h-7 bg-zinc-700 rounded-full border border-zinc-800 overflow-hidden"><img src="https://picsum.photos/id/160/28/28" class="object-cover"></div>
+                    </div>
+                    <div class="text-xs text-zinc-400">
+                        <span class="font-semibold text-white">12.4k+</span> người đã mua<br>
+                        <span class="text-emerald-400">★ 4.98/5</span> đánh giá
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="md:col-span-5 relative">
+                <div class="aspect-[16/10] bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-700 modern-shadow relative">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAGQAZADASIAAhEBAxEB/8QAHAABAAICAwEAAAAAAAAAAAAAAAIDAQQFBgcI/8QAUhAAAQMCAwQGBQcIBggFBQAAAQACAwQRBRIhBjFBUQcTImFxkRQyUoGhFUJTkrHB0RYXIzNicpPhNFRzgqLwJCZDRIOys/ElNmNkdKPCw9Li/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAIhEBAQACAwEBAAMAAwAAAAAAAAECEQMSMSEEBUFREyJh/9oADAMBAAIRAxEAPwD6RREVZEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBEWnieIwYdTmWoeABwvZLdEm2zNKyFt3mw4cytN1YZCWs7J7964bZ+tfj9TLUlv+hxnIC4WzO7u4Ls0cbGWytDbcgs7341rXrRBkuNZD7ip53NAu5w8dFu3IWLA30TqbUMlNt91c12bxUHws+bdt+SgQ6PtOINuIT7F+VsLO5VQyNlZcPDvBWDdotMCIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIO9NeCjLIyFjnyua1rd7nIJKueVkEZfK5rWcyV1zFNpmiOVtABlaLunfoG8zr9pXneJbdQyz+j4NBVY9WjeYSeqYe9+vwClykWY2vVZ8cp2aQh0p8LBUfK9QbuyMjZ3gn4ryuSLbbGWhrKmgwSB3zImuklHi634LU/NdX1Di7EdrKyW++2c/wDM5cryf46zj/16nU4+2K5mr4owN/aAXXMX2v2ZPaxTEaOUjdmOc+4BdPHRFRPNpsYq5TzMbf5rbp+h7BGAGaqrXj9gMb/9pWbna1MJGzJ0tbN4bCY8N9JkYDfJEzI2/E6pRdIO1eNyQ/IOBPjp5XANqarMWAH5xOmngpO2E2Q2eYMQrjNHHEdJKqYZATu0IsfBdO2Px6s2h2sGEUMvV0OdwjkLACY28QNw04Lwfs5+biw3xTb1fn4ePkt7XT02al209FqJ6vaHDY8jC/JBTO4DdmJ08bLzvFOkHa7A6mKJz3Sh97GaEgHvG67TzsF7JNQinw9raZs1RJEAA0y5S4X1udx331UJ8KZLRSQww0kbnt1DhvJ7+HkVPy5Z8uPbK/U5OmN1I6LhW1m3Faxr6duHSZmNkaJC1mYHd86494XOw7eYph1TBS7R4O+OSUdl9P22n3i4U9kg2ur8aoq6kljdRvbAWSPDgLgkFhB00I3WXA9J8w2ZgojRvqpWzuIdHI4uaAOObge4ry836v0cWV/4/rtw8HHyWY5fHO4c6rw93XYXWxzUznXdFKC3Lr8F33D6wVFOxz7Ne4agODh7jxXmmxsj8ZogBPSSQllnsieTJGDwIFiFxtZ0d47h9f1uzm0MlPTl2ZsUz3tyDg3eQQvT/Hfo/RyY75sdOH6uHjwy6417Qi80pJdusMgHpNJhuNMb9DUdXIR4EWK5Kl24pYnMjxyCtwSR/qitYWtdbfZ24r6s5J/byXjv9O8ouOw3FqLEIhJQ1cFUz2onh32LkGvDty3MpXPrZ6yiIqgiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIi18QrIMPo5KqqfkhjF3G10EMTxCnwyldPVPytG5o3uPIBeZba7aNp4Y5a3rMkjrU1DDZ0sruFxy7ytHaPF63FJuvZ2aiQE0jXMuyKMOsZX9w5fOOgWtsps5DDXT1bXzVNVNrNWTm8snh7I7gsZZf43jjv1x1JgmN7SOzbT1DY6FxzDDKYlrByzuGpPvXfMIwmlwiiEUMUVPE0aMYLX+8+9cjSU2VobCGtj9q3wA+9b1PFHDqzV1+05xuSuenTxXRguF2U0jW7g6Szb+7etwU0tuxHBz3/AMlf68IyqymcbWTqNJrJn6u6nutdTkp3MZne4EDgArI25XOHer6n+i25pYOCxrZrCcaZG/FqOKqcPVEguG+C4GPAsJwXbnBW4Vh0FJmpKlznRi17ZAPtXdm7h3LruIkDpAwRptc0FURz9Zi8/wCqa4q6ceX12KCJkjnZxdp396lFQ0+v6MaHmVKD1j4K9ugXH8H3jq8t+ut7OwRw7Q7TGNgaH1UTiOZ6luq5HGcNpMSpm0+IwiopnOBMbt1xuK43ZyXrcY2leNwr+rH92NgXYnNzMb+8uXHJeeuvJbJK4jC9msJwmUzYbRR08hbYuaTe3JcnkcW3Y8eBWwRlYVXELNX0scZHkuVyu6ocyW3aia/vabfgtOsipa6nNNX0okiJ/Vzxh7Seeq5ha7f6Q4cDqrpXWYtkdnYakTwYcymnGofTSPiN/wC6beapxDD9q6F5m2dxaCvh3+iYi0Bw7mytAv7x7122SnjlHbjafELX9CEIJpHuY72XHM3+SmjbquznSNFUYoMI2hoajCcTBtkmFmu8DxXoLSHtaWEEEXBB3rrOP4TQbRUBoMbpmuzDsO+c082O4FdLixjF+jvEIqTGXGs2ckeIqes3yRjk/v7+5amfX1nLCXx62ijBLHPCyWFwfG8XaRxCkusu3PQiIqgiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIC8329xhuIYwzB4Zm+i0462qcx3EAktPgBu5ldv2yxj5C2arsQGskbLRjm8mw+2/uXh2zVQKXBqzFKwGaSokcBm1PZsST4uc3yUyuljksKp5i+RkkksstQ4T1Gc+oD6kA5BoNrc7ld9wWDJRkSMDJN7g3nfQeS6Pssxta6V5lJkid100l97948t3jdd/hqL6OO8cFzdI3mOADCNw0shJY85fVK143XaeakJc2hUab8MtrX3FWvdlcHtOhWjE/SyvY7S28Iyva7Unmri7PFbktQOsVc119yCLfVsuk7RYnFR9KGANnk6uMUMwJc6w7R/wD5XdnLzDpH2GxnaXaVldh89NFAyBkY6yQh1xcncO9cefC8mFxjrxZTHLdelYdidHVyltNPHK7LezTdciDwXnvRvspiOzlVVS4jU08wmiDGtiLiQb31uF3w31ymxtoeRXH8fDnw4dc7utc+WNy/6eOrbLYhRRjFZJKiJj6jEaiSznW0zZR9i7dTyskgDmPa9l97TdeRjopq2TySRY+Q57i4/oSLkm/By9Swmlbh+G01IxxcIYwzMfnW3lc+D8/JhzXPK/HTlzwyxmvW76wsoA2fZI3arIF3Er6DyLOF1Fre1mQnVZBQDvUVJRQRmhbNHleLjhwI7wuOxGhhr6GagxCNs8EjS27he4/Fcoqp2l7CAbHe096Lt0LYvEZdkcbbsri0kr6GQF+HVsxsH84j3jh3L01ee7eYKdptm3xRExVsL+tgcdCyRv2Lnuj7Hvyh2Wo6xwtOG9VM07xI3R3xC1hdfGc5v67IiIujmIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiDzXp3qzFs1Q07TrPVXI5hrSftIXlW0k3yRDR0MrhkpaZkszB9I67yD/AIV3HpZqn4pt5R4cwl0VI1jS3hmcczj5ALyLGqmor4autqLulqpuufyAc7QeAFguWdbxjvewNaX4VUSSOLXT1cTCWt3ixe63ddelx9lrXNNxwPNeYbDtMODYe6xEcrpXm443a0fAFenYYRLSNbvc3RSNOQif2b81eLHVp1C04tNFcLtcCEaXAkOV0chDlQCsOJAujLkmnO0ELLHFt1r00xIIPmr9NCEFmZMyiiCwGysjKoa6/uVjHWKCy6zdRus3QNym1ygUAQXAoXKppWSgszLOZVhZQZvcqW4KA0UXO1QatU39NIOEjc1+8LpexU7MA6QMVwQWbTYmBX07eT7WeB7xdd4qDdo7ivL+ke+D7RbN7RRn+jVHUycBldz+Kf8ArT2i9wEChDIJY2SDc5oIU12cBERAREQEREBERAREQEREBERAREQEREBERAWd6wsPNmOPIFB827aY7HBtRtJizb9Y3PFTj9t1ogfK5WlguDw12GtimaXCSYGw4siGo95I8l1za29TiFMy/wCsrAXDm0Bzj9y9M2KoYjkZmvIAOsHskdt32ge5cb9dI2aDC46amjpoYzFHCxjQ0m9nWzO+LvgudwuUwgDloVqRPf1uYXcx7y4EjWxN1vtjadWpFckbA5hxVpOgK1oT2LHgthuuiNJtKlZRaNVK6CyI2W3G/RabVaw6hGW3dZuqgVIFBIKYKgstKC0FSBVQKmEFt0uohAgks3WEQSRFi6BdRO9CVi6DFRrDccCPtXn3S5Sio2HxPTtQtErTys4fcSvQMudjxzBXAbT0fyhgNfSkXMsL2+bTb7krUczsHVOrtjcGqHm730rLnnoueXSuiCYybAYSDvZC1p9y7qumN3HG+iIi0giIgIiICIiAiIgIiICIiAiIgIiICIiAtHHJ/RsFr5r26unkdf8Aulby4Pbl5j2Oxlw3+jOHnog+Vqwl201M3f1Mckxv3Nt969G6N3vlw2aWQgyvYA5wNj23Ekrzaod/rLXu+joX/EgLv+w05ipYoWOAdJMbgg3ytjB+0hcHZ6BHCC6xV+QNFgtOjnD3gG++y33N5KxE2ABWblUGlSBRpe3tBSCrjNtFYEEgrGncqgrAUZXt8FK/cqWu71LN3oLgVkFVB2izmQXgqV1S1ymHILgVIFUhykHILkuq8yZkFqwoZljMgmSoqN1K6CTVoy8CeK3mb1oVXZZpfQlGo4nopIiwmsox/utVLF5PK72vN+jGUx7SbW0bt8deZB4PAcPtXpC3i5ZT6IiLbIiIgIiICIiAiIgIiICIiAiIgIiICIiAurdJ9T6PsTiAvYy5Ih33cPwXaV5p021pZhuHUbf9rK6V3g0W+0pfg+eql99ocZ7qK3m8LuuwMjjik7JL2hjNtOLiPuauhgk7Q42T9BGPN7V2/Yifq5q2VxJJLRe+/euDs9To4SNR4rl4nm1nLjKB7XRR2N7tBXItsFYi5YKwCoko0sDlMOVCzdBsXVjXaLWzaKxp0RleCpgrXBUwUaW3WQVXdZuguDlJrlrgqQKDaz6LIetcOUgUF4cpgqgFSzILwVgqLXLOZBK6XWLJZBZGbrWqx62m8q9miqrLaIOobFNMPSptOzcyakpZvfYt+5enLz3Z+PL0lVj/AKTC4b+6R4XoS3g5Z+iIi2yIiICIiAiIgIiICIiAiIgIiICIiAiIgLxbpkrjPtJDSA9ilgGn7T9T8LL2lfP/AElSdZtpix4Nc1g9zQs5eLHk8AJx/Hr8I4/IPauz7LxSESPAOQutf3LrtEC7aDH7cIgT7i1dt2Qq3Cf0RxvG95IFuNlydXo+EuIENt2UfYudbquNoYSxoI4LkIGl+oVhpZmKxfuUnMcFS7MFFWXCzdQAupBnersSzKbXKvKrGsUEw/VSDtVEN0Ug3RBYHLOZYa0rLgUEmnVWA6qpg1VrRqgA2KmHKt2hQ7kFubRA6xVTTosE6oNlrlaCtZl1c0ILQVMKlu9WNVFrd6prNwV8Y0VNd6gQcFhMZG3fWDc7Dw0+6V34rvS6Th3/AJvZ/wDD/wDyruy3g5cnoiItsiIiAiIgIiICIiAiIgIiICIiAiIgIiIC+d9u7navFyeNQ5fRC+fekaPqtqMW75s3mAs5+Lj68zwdufFtpZQOyGlo+C5XB6htLiEMpJuHhcds4M2F43Od8krxfyW/h7mQ1Eckzc7GdrKTvIGg87Lm6veMGdDJTMlgkjlbpdw1F+S5iFgPzme4ELzrY7GW4NEbzQyU0zw+SNp9U2AJHjvK9Ihq45Q1zQ0tcLghIRtRQMO9rT7lN9PEP9mz6oVTZx/2VomB5oiAjYN8cf1QrGNiG+KL6oVTpVHrWoNzq4voovqhY6mn+ib5BUxztOl1dnbzCLsFPAd0Y8lkUdPxb8As506xFPQ4L6W+qFIUUfHL9ULHWDkrmyBBX6FBxYCoOooweyGjxF1s3WUGoaCN3rbu7RVvwyO3Zc8e9b6XQcWMOc11wbhZGHm+pNlyV0QcaKNzXbrjxVraZ4+afNbqwg1hTgbx8VLqmD/ur1FxaN6MqWtHAn3rWxE5Yh4qVZVRwsOlzustSpmMsEZcLOvYi6NOMwyTNtm+PS0dGw+cjvwXeV0LBR/r1XH/ANnB/wBR676t4eOXJ6IiLbIiIgIiICIiAiIgIiICIiAiIgIiICIiAvnnpSntjeLSX3Su+AX0MvmnpblyYjjPdLKs5+Lj66XsuC3Y2SR2+aUnzd/JbVj1Wbm4D4qGDs6vYugad73A/ElXmN4awRAufnBLe4Lm6xKKJzsQPVOLQX3IHBew4BWuZTxRuJIDQASvM8Gp31E7XyRiG5+cd69CwyINjaDI0u8Uiu2w1FxvWw2cELhIOHaW6yQAauQ05AvJ4qBdfiqg9p4rJc3mgzndvCujnI3qi7TuU2uZbVGW6ye4WTLcLVY9nAq1rmEb0F7ZO9WCTvWs3LzUtOaDcbMVa2YrjwQOKtjcOaDd6xOsWq545o145oNrrAoGRUlzeaBzTxQX9aOada3mqLtS7UFrpAtaon0Ui5nNVvdGeKDX9Ha79JmzOGuUrFQ3Rjt+YgrbjbFmDs4A4jmqcTaARkNxfgjThcCBO3mJ33eiU1vrSLvq6Jsxd+32M3+bS0o/6hXe1vDxy5PRERbZEREBERAREQEREBERAREQEREBERAREQYe9sTXPkc1jGAuc5xsAOJK+U+lOvjrHYrVwuzxTPkcxw4gnQ+S9y6cHTN6NsUFM97JHljLsNiQXahfM1K5+J7NRU07rTkmMgnXNnaAPIk+5Yzv9NYueEIgwDDoBpkaL+X81sxZaYx1FswBN2jjorq8seyCNjmkake6yvo4R17M5ABuR5LDpFlPilC+UNBDXncDoux4U6WokAgDiN17aBY2Vko6CSWN0MJZIbh2QEg+K7QZhNcQgNB5CyRpmmpJGR/pp25u43W6yAcZCfctDqXd5VjZZIuBQcmyKwHaJ9ysDBz+C04qx24t05rZZKTwQSyGyw1p5fFSDieCyHHkogA7/JUgH8visCQ8lYJ+5BOz+R81NrX8j5qAl7lLr7cEFmR/cshj+5Y64rPXFBY2NxGpUmxnmq2yutuUhK7kgsER5qXVHmqxI7krA93JAERHFYdH3qQe7kFhzj3IIOZyd8FSY9dCpvc7kqy833IDKd7jo4BSrBljc0kaBREhHdZKl5dE64CDT2WZ/rfjMntQ048mu/Fd0XV9m4msxqreCM8sLHEcbDsrtC64eOWfoiItMiIiAiIgIiICIiAiIgIiICIiAiIge9EKi97WMc518rQSbcgLlB5l0w7SU0McOz/VOfUTgTvcSAxjQTYHmTr5LxuXDaN1WyX0eMSNOcZm8Vs7U4pJtDtDWYjM4kyH9GD8xo3N9wsuPw2eaOpp2dZmYWkFp3aLlnfrrjPida1rnM6sTwvZoDGczSL+yd3uXMUxs4GeYa3s4g23LD56Kohc18bmzt3Fn4LWyyPa2OUbidfcptXLwZKSZjpqqFjSbkl4XeMPr8OlbG0VlO6Ujc03JXlrR8qYZMzQ1FLcX9pvA+5es7JbM0VLHh9QII21Ajb1jtSXHLrrdeX9PPeGTX9u/FhM97YGOYM6+TE6R1t5Dwo/LmEH1a+mce56oodjsIw+pMkdOJXFxdaU5gLndZcvLgOGSgF2H0pPdGB9i74ZXKbrGUkrTixjDnutHUscT7F3fYth+K0cfrSuHjG4fckdMyjflgYyNvJgsFy0by6MXcfNb2y4gY7QNflM4zHcMrr/AGKb8ewtn6ytjYeTgR9oXJyfN13LLmsljtK1r/3mgoOMZtDhDjpiEHmr241hjyAyugJ7nK5sETd0UY8GBWZQ3c1o8AgpOL4Y12V9fTNPJzwFluMYWDpiNIf+IFtSQRTtHWwxv/eYCqhR0rdW00AP9m38EGRimHDU1tNbvkAWRiuGf16j/jN/FWxtb1eUtYRyLQoOpKV2rqWnJ742/ggicWw0C/p9IP8AjN/FS+V8NaLmvpf4gUm08OWwhht/Zt/BWtjZ7DPqhNituK0BNm1cJPcbqYxOj/rDT4Bx+5TDcvq2HuUszj84psV/KlH9Mf4b/wAEOJ0f0x/hv/BXAv8AbPmsOJ5nzS0avylSF2USm/8AZv8AwWBXUrjYTf8A03fgtm7/AGj5qTQ/2j5oNWSthA7Ink1t2IXG/wAFcHdfGC1rmkjc8ZSFa5zg2wdqstaNO5T1Np4VCykxDr3Oa58kTYABw7V12FdfDg6op3kHq2G5PwXYF1wc8/RERaYEREBERAREQEREBERAREQEREBERAXDbZVXoOyuK1DTZzKZ4ae8iw+1cyukdMNUYNjzA02NVOyInkPWP2IR4BTG+dutxxVtER6UHO3Bljf3KMTbN4HMCs08ZDpTysOffovO7xszwWqWSxki++3FXU/6bqw4a3IPkVgvb1DC65LXWNt6vgAbNCWe0eHcVdq6/SVD8Oxtr/ml1nDmCdV9C4IQXx2vYM04rwuroOtxNmUDV4PxC91wthbI12ttdy+X/I3x6OD+2KptpT3Kcb7D8VTUy3qJB+0Vlpuvo8V3jK4Z+k7A430WYjwUXXKyNFtlcdQg0CrBUygXspxlVA3VjdEFt9FFRB0WQgm0qV1WptQTbuUgotUwgWWCpLFkBAFkBZIQYshdZCVU8ngguiBe8BTbo4AqqmzZ2hvrK4iz9UFtQ39GBv0IsPtXJ0EnWUzb7xpb7FxcjszGgEbyLW7vgtjDJclQ6Lc3UD3blvFnKbjlURF0chERAREQEREBERAREQEREBERAREQF5z05HLs1QOvYir0+oV6MvNOnR9sEw2O9s1S53k3+aUnrx2nA6m9xx4aWUqduZ9Truc3hbgrKVt4Rod53GyUMZtUkm4c/KLHTQcuC87vFzomGMFtjm0ddTgaWPhFrgSfcViKHIXB1xrxV0I/SsbxvfyBRW1hsPXYrRAm15Wi/vXsNIwguy3PZtqF47TzPp52SRGz2EOa7kQu4bO4zW1j5mzTOLmsGt9+vLcF8793BnyWdHfhymO9ucrA5lfMD7V96nG82WsZTI7M/wBbirGuXu4sbjjJXHO7vxtA3UgqY3q7NoF0ZSRYWEEgVYwqlTaUFgWVAFZDkEgVMFVAqQKC8FTadFWNyk1BYsqN1kIJLFllZCCIaXFScxrdSphwAK13Xldbgguo9C6Q7joFJ+83UHG1o27gj3Xdrysgk42YTusb3vZTY/8ATB3AFVnVh+5RBvDmvusd9/itMux3uAs8Sq6c5qeNx4tCsXVzEREQREQEREBERAREQEREBERAREQF5R05yknC4LDKA+S58QF6uvGenCX/AMao4rHSnBP1ipl4s9efUzhlANreCtpGFsJJv23ucL+NvuVFHnaHEk2vffZb1Ex0lBTF2hDSP8RXF3LE3J37rhThFqiPnr9iB2R+U7jv03FTibeqiHIOKgyWdpdo2XiDIXy7i829wXC08HWyWO7iu04fkZGxjBYAaBByQF1cB2VCIXCvA0VRACysBWcqxZBYCpXVYKxm1QWhZCqDlnMgtBWbqoFZugsDlkOVWZZzINpr1MPWox6sDkGzmVjHLUDlaxyDaKBVtcp3QHngojs6rPBRKCLT2lJxWDoVk7kAE3yncRv3K2HK2CS1gG8m2+CwxmdpZfXe23AqMDr00hNxra3EFVlz1B/RIxyFletXDjmpxpaxIstpdcXOiIiqCIiAiIgIiICIiAiIgIiICIiAvEemOf0naUMAFoI2wXI4ntfevbl4d0gMM+1+JsBN2TMfYa6Bous5eNY+unyOztfYN3Na3QDdp/nmuVkYYYmMZwAC4yS4iGhuXMGrb8eX3cFy1ToJO6642urUa3rI8w46qykafSXH2Y/tKxCxzIYr7nMBBW3SRAvld3N+9IrdpG9lcxSE6LjKRvZXJ0zSCERy0DtFtsdotCG63GblRZdYJWLrBKBmWC5YUSoJZlkPVZKxdBdmTMqrogv5G6kHWIKovpv4KNRN1UDnckG1nWc61vQp5ZpWxPqC2N2Uub1YBNgeOvEKw4bUlos+qaRv7US31o2Gv71ax4vvWmzD5gdZKk+L4/wVvoE/B0/14061ncb7H6K0OutJtHPxM/nGVa1j2Txwu6/M9rnNuWDda/2p1puNpYcjaOU3Dr2/tgPsCGFkYfbMHMIBu/NvF061dqnHVTB0UbKbQsqy0ltrbvsWGC0j2i9jd3LTu7kudSAbcAFkdl4IG8AH/sqy5fCXdmRp33ut9cThr7VGXXUFcsuuLF+CIirIiIgIiICIiAiIgIiICIiAiIgyvDtpRJNtLi9Sxt2CZ2Ycxe3v3eS9xG8LwvGbTzV0xc4ETvLQOJLrHw0Uy8ax9ddfTATxR3b2ZAdDyN/8lblabUs55sJ+C1muIqKcHNrIBu0W1WXFJKA3MS2w7lwdYll/QtHs2AWzRgNEhJ0JH3rLIiSdNDqFdBTlzZGcQQfciraLV5HeuZgaLLioGNjlYxpufndy5aLU2ag2ohbcrg629VNBaNVhzrlUXZ+9M5VO5Zz24KCzPcrN9FTfVZLtEEyVElRBQlBZdLqu6XQWg6aqqsGalc3nl+0LLTZHHMGN+bnbfwDgSg3p3zddUNhkfGOvdmcydjCB2Rezgb7j5FaU2IPGYtr95NmjEIhp3dgrkIq6KIyZmwPc6R7sxda4LiQNyl8oRAfqaVo8dP8AlXolRxwrm2YBiDnExgttWsBe7l6vjrxsrPTJXOzCpkjdq50QqoXWB43I8fJbnyhDe/V0dxxzH/8AVVGsgdfNT0rr/tj72qsaRZU1dRJaB9UBYkuY6CRo8itumqCyqjmrS9nU08j3GQNafWaNwNtbLXpaimpyTDTQxk6XjcwX8rLEr4qupmFXSMnpnRNZkeWODiHE6i/ghp107aYnU7YUDqankhwNrxHPHIGh8jXt/WanQtdoW8NDrdd762OUVMkT2vjLo3BzTcEFnArh46bCI2gDB6IAbrsi08yuQpZ4XCVjeqY1zmBkbHA2DW23Dcl8JFoIJWb29YKmdjoznb6u5SZIZGggajRedtY2S0gA3uB+CnftbxuvbmtOpuyekeR/tC0+9pW3ctcAQSLHVWJWxQkCrjPC/wCK55deh/WtPIrsK64ueQiIqyIiICIiAiIgIiICIiAiKmoqYqdmaVwAQXIuHftFQtNszj4BRbtJQuNruHuQc0dQV4jWNbeaJ4N85zHwJuvW2Y7QuOklvELy7aQMZjVZ1PaidKXDwOtvNZy8axdVdAflemGUdg5zqfBb2JgMbGwAduQD3DU/YpQjNWyuN75Rw03q7EIzJJA0C/Ze77AuTrEoH2AtyW9TjKyWQa2Z960KeGQjLaxXMU0AY2x43B7worUoI3Pd2NS49p33LsFLSlrb2t4qFEaeBgFjcbhbQLb9Mi5u8kGHQ3Ueqa3hcqfpcPM+SCpg4k+SUVmLuUTF3K/0qD/IWPSYO9QVdV3J1Kt9Jh5O8k9Ji5P8lRX1QTqleJoTx+CkHRH5wUGsYAsdStq8fthM8Y+cEGr1RWOpvyW2ySN253msuDOLm+aDRfBfvWY4r7wFugM9oeaw4R8Ht81RpOp2ud2WhQ6gA7lu9ZC1wbftcwNPNTa1rvVPxU2NHqe5YdD3DyXJdUnVIrjPRwfmDyVsUQiu5gynuW71bGntlo8SoGWnZ60sY96sqWNyhq2yAMm7XDXitgMETjlHZ4FcXTmCqc7qMxa3e61guUhBDA17r+5VNNbE7mCJw+ZLG7/EB963Ccwt2bi/jZaeLG1KA0XLpGN/xBbELv0jmZgCQSO//OiQXU57Yac177j4rso3LgaRpNRC1xBN991zy7RzyoiIqwIiICIiAiIgKiqq4KVmaeQMHer15xthWSPq5G5uyNAEHap9qcOivaXOe5cJiO2RuRTtYG9+9dCkmI4rXdKXHUoO3S7XVbtxAXH1ONTVJvK8m/C66/dTQcsK626yuixQNFnxMcuGapgoObGJwn/d2+a4vFHNnc97Oz3X3CypzKUNjI4cxZTLxrH1x7gIsZoXPcWMfeO5do4kWAt4rsUNPne0uFi0WXFV+HiqpxlaOsic2Rp3G4N7fArsGGkyQ3kaQ6wvfjouTsy2FoGgWQ2y2DvssZFhWvlWbK8xhRMYQUrF1cWKPV6oK0uVcIwphg5IKACs27lflCxlQUhZup5VjKghcp5qYYphiCq55orciZEFRKiVaWLGRBTqpa8FbkWQzuUFQzcz5rBD+Z81stjHJSMY5KjScwk66qDoyeC3jH3IyMZtQpob2GAQUbWkWJuSt1slwuPD1NsputaSrqm8kNjwe0+RW2xjevZOxwBLbOv46LRiOZzwXaO+C3aZps17XFzHCwII57x/myqacnhbA6qDiLkA62suaXFYMLveRewFlyq64xyyERFpkREQEREBERAXl+17melSlpBudF6e4XaRzFl5htZhs1PUOuCW7wUHUpTqqS5SmPaVBKKtDlMOVIKldBcD3rObvVV9FjMgvB13q2I9vetZpuptdZ6l8WeuYj7bAXmxZqe+ynTVcsczg5g6q9soGt+fnfyWvSS3B9o6FbUd3V4IAyMZr+8f+5XF2cpE9sjczST47wrNFoywuIDoXmN448D3FWQzkC04DJO86HwWVbVliyzfRYugZAmQLN0ugWCWCXS6DFkspIgjlWQxZusgoI5VLKs3WLoMELGVSushBXkWcqsspAIKwxSDAppdERsFhTWQ1BBrb8FnJrw81aG3QuY31nN80EGszcQp5Ay5e4ADUknQKqQMf6h17l1ypwXEMVrM1dOYqVh7ETH3B7zzKlqOxU8zKp1qdxfFmymQCzXEfNBK5CB0kk1g3qwN+lvdotQCOkw6CniADIMuU94P81y8TmyMLm/OHmtz6WuXwRmWne4jVzlyCppYxFBGzkNVcu2MccvoiIqgiIgIiICIiAuPxrDmYhSuYQOsG42XIIg8T2gwmWjnfdhAueC4N2i97xLDYK+FzJmC5GhXme0uyk1G90kTQWE30RXUWu0Wd40WJGPjNnBRuoLblLqvMs3QTBKzcqAWboN6jeDI13mt/C5g+apcCS3OADfkAuA9INO66swmsLYC5zrGR7n+ZXHJ2njt2a6y4RytLJWBzDoQRoVxEVfewcdOYW1HVNJ0K5tLHYXE0f6LPU0/dHKbeRVjIKtgsK5zx+2wFG1A5qXpA5q7NJtbUj1pInf3SPvVgMo3hh8LqkVAPFZ68c1Nq2A53sjzTM7l8VQJhzTrwE2mmxndyWM7uSo9ICdeE2L+s/ZPknWdzvJVdeOadeOabF+fuKZ+4rX64c1nrhzTY2M3cfJA/uPktfrxzWevHNNjZz9yyHFawnvxUhL3psbGY8lnM7kqRIOasEnemxL9N81zR/duoPgnf/vDx+6AFa15KsBQaRoC8WlnneOReVKHDaaJ2YRDNzOpW8sqioNa06BTB0Ui1YDVBr1h/Q23kkae9c5gkRe1jOFzfzXETtJLGgDtO18Auy7OQkROkcLAEtHet4s5eOa4IiL0OAiIgIiICIiAiIgIiICqqoWzwPY4XuFaiK8a2noDFVyEMIHgutuFnL3uvwumrGkSxtueNl0TaDYp4LpKO1tTYBSjz9Ft1uH1FFIWTxuaRxtotayDIQlFBxQa1fAaiAta/I7g5cQ+onoWtjlGZgAAeNy5iZ+VcLila2NjhfeCs3Hbcul0WMhugcLLchxoA3uF51W1LxIXRuI8FpDFaqM8XBcrhY3Mnr7MebzCtGOt5heOjH52743+4p+UknGOXyWela7R7K3HGW9YKYxpm/MF4yNpXcWyD3KY2l03v8inSnaPZPlqP2gs/LcftBeODaTvd8VMbRj2z8U6Ve0ewfLMftJ8sx+0vIBtGPpE/KIfSfFTrTcewjGo/aCz8sxe0F49+UYt+s+Kx+Uf/q/FOtNx7F8sx+0s/LMftLx0bSD6T4rP5SD6T4p1puPYflmP2k+WY/aXj35SD6T4rB2kH0nxTrTcextxmO/rBXMxeP2wvFm7TgH9Z8VP8qrfOPmnWm49vixVjtA4Legr2He5eCDbLq93We4qY29kbubMfenWm4+hI6yM/PCvbUsPzwvndvSLUN3QTn3rI6SsQB7NJKR++FetNx9GsqGkaFWNnbzXzozpLxS120b/AHv/AJKxvSTjzv1VMG+JJTVNx9FiRh5Kxr2dy+dY9ttq6lwDZBE0+yy5+K7FgVfjlXK3r6molcfm628gkxtqWyPdqTC5qmVjnMyw2vnPHwXZ442xRtjYLNaLALh9kfSfkOm9Na9sobudvsubXoxx04ZZbERFpkREQEREBERAREQEREBERAREQcTjmCU+KQOa5oEnNdBrtg8QjzOgdE9vBt9V6oiK8CraOeimMVTGWOGmq1S1e+Yhh9NXwujqYmuBFr21C61JsDhr3EiWdo5AhB41XuytK6rXxvkkO6y+iJejfCZb55qk+DgtZ3RVgZNzLVfXRp82S0BfvCofhYI3FfTP5qMC4yVf1x+CfmowL6Sr/ifyTQ+YjhPcVE4Q7kvp/wDNRgX0lX/EH4J+ajAfpKv+J/JTQ+XjgxO8J8i9y+o/zV4D7VV9dS/NZgPOp+v/ACTQ+WvkXuWPkMngvqcdFuADf6Sf+J/JZ/Nds/yqP4iaHyv8hHknyEeS+qm9GOzzTcxznxkU/wA2uzv0Ev8AEKaHykMA/ZWfkD9kL6wb0dbOgW9EcfF5Wfzd7O/1N31ymh8nfk/3BZ/J7uC+tG7AbOtFvQQfFxWfyB2d/qDfrFND5KGzpO4BSGzbifVAX1oNgtngdKBv1irG7DbPtNxQNPiSmh8ljZn9keam3ZhpG4L62bsZgDTcYdF71Y3ZLA2m4w6DyTQ+TGbMMtuC5zZzo9nxqd0VGIs7Rc532+5fTzdnMHaLDDqe37i3KTDKKkeHU1NFEf2GgJoeAwdCOKG2d1G0f2h/BcrSdBz7D0itp2dzWkr3RE0z2eR0vQphrLdfWSP/AHGgLmqPon2dgAD455LcTJb7F6EiaOzqFP0ebNw2y0Gb957iudw/BcOw+3odHDEebW6rkkTR2ERFUEREBERAREQEREBERB//2Q==" class="w-full h-full object-cover" alt="Adidas 2026 Collection">
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-transparent"></div>
+                    
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="glass rounded-2xl px-5 py-4 text-sm">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <div class="text-xs opacity-75">BEST SELLER 2026</div>
+                                    <div class="font-semibold text-lg leading-none mt-0.5">Argentina 26 Authentic</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs line-through opacity-50">₫3.500.000</div>
+                                    <div class="font-mono text-xl font-semibold text-[#E31837]">₫3.000.000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-6 right-6 px-4 py-1.5 text-xs font-medium bg-black/70 backdrop-blur rounded-3xl flex items-center gap-x-1.5 border border-white/10">
+                        <i class="fa-solid fa-check-double text-emerald-400"></i>
+                        <span class="font-medium">Chính hãng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRUST BAR -->
+    <div class="border-y border-zinc-800 bg-zinc-900/50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-x-3 text-sm">
+                    <i class="fa-solid fa-shield-halved text-emerald-400 text-xl"></i>
+                    <div>
+                        <span class="font-semibold">100% Chính hãng Adidas</span><br>
+                        <span class="text-xs text-zinc-400">Cam kết từ nhà bán uy tín</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-x-3 text-sm">
+                    <i class="fa-solid fa-truck-fast text-emerald-400 text-xl"></i>
+                    <div>
+                        <span class="font-semibold">Giao siêu tốc 2-4h</span><br>
+                        <span class="text-xs text-zinc-400">Nội thành TP.HCM &amp; Hà Nội</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-x-3 text-sm">
+                    <i class="fa-solid fa-rotate text-emerald-400 text-xl"></i>
+                    <div>
+                        <span class="font-semibold">Đổi trả miễn phí 7 ngày</span><br>
+                        <span class="text-xs text-zinc-400">Không cần lý do</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-x-3 text-sm">
+                    <i class="fa-solid fa-headset text-emerald-400 text-xl"></i>
+                    <div>
+                        <span class="font-semibold">Hỗ trợ 24/7</span><br>
+                        <span class="text-xs text-zinc-400">Zalo &amp; Shopee Chat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <div id="products-section" class="max-w-screen-2xl mx-auto px-8 pt-12 pb-20">
+        <!-- Section Header + Controls -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-y-6 mb-8">
+            <div>
+                <div class="flex items-center gap-x-3">
+                    <h2 class="font-display text-4xl tracking-tighter font-semibold">Bộ sưu tập 2026</h2>
+                    <div class="px-3.5 h-7 rounded-3xl bg-zinc-800 text-xs flex items-center font-mono text-zinc-400">48 sản phẩm</div>
+                </div>
+                <p class="text-zinc-400 mt-1">Tất cả đều là hàng chính hãng Adidas • Cập nhật liên tục</p>
+            </div>
+
+            <!-- Sort -->
+            <div class="flex items-center gap-x-3">
+                <select id="sort-select" onchange="filterAndRenderProducts()"
+                        class="bg-zinc-900 border border-zinc-700 text-sm rounded-3xl px-5 py-2.5 outline-none cursor-pointer">
+                    <option value="newest">Mới nhất</option>
+                    <option value="price-low">Giá: Thấp đến cao</option>
+                    <option value="price-high">Giá: Cao đến thấp</option>
+                    <option value="popular">Phổ biến nhất</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 mb-8" id="category-filters">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products-grid" 
+             class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-5 product-grid">
+            <!-- Populated dynamically by JavaScript -->
+        </div>
+
+        <div id="no-results" class="hidden text-center py-16">
+            <i class="fa-solid fa-search text-4xl text-zinc-700 mb-4"></i>
+            <p class="text-xl font-medium">Không tìm thấy sản phẩm phù hợp</p>
+            <button onclick="resetFilters()" 
+                    class="mt-4 text-sm px-6 py-2 border border-zinc-600 hover:bg-zinc-900 rounded-3xl transition-colors">
+                Xóa bộ lọc
+            </button>
+        </div>
+    </div>
+
+    <!-- TRENDING 2026 BANNER -->
+    <div class="max-w-screen-2xl mx-auto px-8 pb-16">
+        <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1">
+                <div class="uppercase tracking-[3px] text-xs font-medium text-[#E31837]">TRENDING 2026</div>
+                <h3 class="font-display text-4xl tracking-tighter mt-3">Jersey &amp; Kit Bóng Đá<br>Phiên bản mới nhất</h3>
+                <p class="mt-4 text-zinc-300 max-w-md">Argentina 26 Authentic • Germany Home • Real Madrid Retro • Liverpool FC 26/27</p>
+                
+                <button onclick="filterByCategory('Bóng Đá')" 
+                        class="mt-6 inline-flex items-center gap-x-2 text-sm font-semibold border-b border-white pb-1 hover:text-[#E31837] hover:border-[#E31837] transition-colors">
+                    XEM TOÀN BỘ JERSEY <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+            
+            <div class="flex-1 grid grid-cols-3 gap-4">
+                <div class="bg-zinc-950 rounded-2xl p-3 text-center border border-zinc-700">
+                    <div class="text-xs text-zinc-400">Argentina 26</div>
+                    <div class="font-mono text-xl font-semibold mt-1">₫3.000.000</div>
+                    <div class="text-emerald-400 text-xs mt-2">★ 4.99 • 842 đã bán</div>
+                </div>
+                <div class="bg-zinc-950 rounded-2xl p-3 text-center border border-zinc-700">
+                    <div class="text-xs text-zinc-400">Germany 26 Home</div>
+                    <div class="font-mono text-xl font-semibold mt-1">₫2.200.000</div>
+                    <div class="text-emerald-400 text-xs mt-2">★ 4.97 • 631 đã bán</div>
+                </div>
+                <div class="bg-zinc-950 rounded-2xl p-3 text-center border border-zinc-700">
+                    <div class="text-xs text-zinc-400">Real Madrid 99/00</div>
+                    <div class="font-mono text-xl font-semibold mt-1">₫2.300.000</div>
+                    <div class="text-emerald-400 text-xs mt-2">★ 4.95 • 418 đã bán</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-zinc-800 pt-12 pb-8">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between gap-y-10">
+                <div>
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
+                            <span class="text-zinc-950 font-black text-3xl tracking-tighter">A</span>
+                        </div>
+                        <span class="font-display text-2xl font-semibold tracking-tighter">ADIDAS VAULT</span>
+                    </div>
+                    <p class="text-sm text-zinc-400 max-w-xs">Adidas Vault – Kho hàng chính hãng Adidas qua Shopee Affiliate với giá tốt nhất.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-8 text-sm">
+                    <div>
+                        <div class="font-semibold mb-3 tracking-wider text-xs">HỖ TRỢ</div>
+                        <div class="space-y-1.5 text-zinc-400">
+                            <div class="hover:text-white cursor-pointer">Hướng dẫn mua hàng</div>
+                            <div class="hover:text-white cursor-pointer">Chính sách đổi trả</div>
+                            <div class="hover:text-white cursor-pointer">Vận chuyển &amp; Thanh toán</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold mb-3 tracking-wider text-xs">LIÊN HỆ</div>
+                        <div class="space-y-1.5 text-zinc-400">
+                            <div>Zalo: 0901 234 567</div>
+                            <div>Shopee Chat: AffilEx_Adidas</div>
+                            <div class="text-xs">support@affilex.vn</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="font-semibold mb-3 tracking-wider text-xs">ĐẢM BẢO</div>
+                        <div class="flex gap-x-4 text-3xl text-zinc-500">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-shopee"></i>
+                        </div>
+                        <p class="text-[10px] text-zinc-500 mt-2">Đối tác chính thức của Shopee Affiliate</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-500">
+                © 2026 Adidas Vault. Đây là website affiliate. Chúng tôi kiếm hoa hồng từ các giao dịch trên Shopee mà không làm tăng giá cho bạn.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" onclick="if (event.target.id === 'quick-view-modal') hideQuickView()" class="hidden fixed inset-0 bg-black/70 backdrop-blur z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 max-w-2xl w-full rounded-3xl overflow-hidden border border-zinc-700">
+            <div class="flex flex-col md:flex-row">
+                <!-- Image -->
+                <div class="md:w-5/12 bg-zinc-950 flex items-center justify-center p-8">
+                    <img id="modal-image" class="max-h-[320px] rounded-2xl shadow-2xl" alt=""
+                         onerror="if(window.currentModalProduct){this.onerror=null;this.src=getFallbackImg(window.currentModalProduct.category)}">
+                </div>
+                
+                <div class="md:w-7/12 p-8">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div id="modal-category" class="inline-block text-xs px-3 py-1 rounded-2xl bg-zinc-800 text-zinc-300 mb-3"></div>
+                            <h3 id="modal-name" class="font-semibold text-2xl leading-tight pr-6"></h3>
+                        </div>
+                        <button onclick="hideQuickView()" class="text-zinc-400 hover:text-white text-3xl leading-none">&times;</button>
+                    </div>
+                    
+                    <div class="mt-5 flex items-baseline gap-x-2">
+                        <span id="modal-price" class="font-mono text-4xl font-semibold"></span>
+                    </div>
+                    
+                    <div class="flex items-center gap-x-2 mt-2 text-sm">
+                        <div class="flex text-amber-400">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-emerald-400 text-xs font-medium">4.9 • 1.2k+ đánh giá</span>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button onclick="buyFromModal()" 
+                                class="shopee-btn w-full h-14 flex items-center justify-center gap-x-3 bg-[#E31837] hover:bg-red-700 active:bg-red-800 text-white font-semibold rounded-3xl text-base transition-all">
+                            <i class="fa-solid fa-shopping-bag"></i>
+                            <span>MUA NGAY TRÊN SHOPEE</span>
+                        </button>
+                        
+                        <p class="text-center text-xs text-zinc-400 mt-3">Giao hàng nhanh • Đảm bảo chính hãng • Hoàn tiền nếu không đúng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#E31837');
+        }
+        
+        // Fallback images by category (high quality Adidas lifestyle shots)
+        function getFallbackImg(category) {
+            const fallbacks = {
+                'Bóng Đá':      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/jerseyplaceholder/jersey_placeholder.jpg',
+                'Gym & Training':'https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/gym-training-tee-placeholder_tcm221-740024.jpg',
+                'Golf':         'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/golf-polo-placeholder.jpg',
+                'Running':      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/running-placeholder.jpg',
+            }
+            // Use a clean SVG placeholder with category label
+            const colors = {
+                'Bóng Đá': '#E31837', 'Gym & Training': '#1a1a1a',
+                'Golf': '#166534', 'Running': '#1e3a5f', 'Lifestyle': '#3f3f46'
+            }
+            const col = colors[category] || '#3f3f46'
+            const label = encodeURIComponent(category || 'Adidas')
+            return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='${encodeURIComponent(col)}'/%3E%3Ctext x='200' y='185' font-family='Arial' font-size='18' fill='white' text-anchor='middle' opacity='0.7'%3EAdidas%3C/text%3E%3Ctext x='200' y='215' font-family='Arial' font-size='14' fill='white' text-anchor='middle' opacity='0.5'%3E${label}%3C/text%3E%3C/svg%3E`
+        }
+
+        // Product Data - All 48 products from user
+    const productImgMap = {
+      // Ảnh thật từ Adidas CDN - map theo SKU
+      // Gym & Training
+      1:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/52a8f81a00314cbdbc94ac8300beecd2_9366/AEROREADY_Designed_To_Move_Sport_3-Stripes_Tank_Top_Black_GM2130_01_laydown.jpg",
+      4:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/GM2158_01_laydown.jpg",
+      8:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IN9299_01_laydown.jpg",
+      11: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IJ7478_01_laydown.jpg",
+      20: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JC5196_01_laydown.jpg",
+      21: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KD5453_01_laydown.jpg",
+      22: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IX6716_01_laydown.jpg",
+      25: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/GL0022_01_laydown.jpg",
+      26: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IJ8378_01_laydown.jpg",
+      38: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IC5083_01_laydown.jpg",
+      // Bóng Đá
+      2:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KA6852_01_laydown.jpg",
+      3:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KQ6513_01_laydown.jpg",
+      7:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KH0334_01_laydown.jpg",
+      42: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JM5897_01_laydown.jpg",
+      44: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KD8363_01_laydown.jpg",
+      45: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KA8117_01_laydown.jpg",
+      46: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JW1992_01_laydown.jpg",
+      // Lifestyle
+      5:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/HG0349_01_laydown.jpg",
+      6:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KE5702_01_laydown.jpg",
+      9:  "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IK8683_01_laydown.jpg",
+      10: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/EJ0926_01_laydown.jpg",
+      12: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JE3069_01_laydown.jpg",
+      13: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JC9992_01_laydown.jpg",
+      14: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IP9878_01_laydown.jpg",
+      15: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/H13500_01_laydown.jpg",
+      18: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IW3252_01_laydown.jpg",
+      19: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JP0393_01_laydown.jpg",
+      23: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IP9863_01_laydown.jpg",
+      28: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/GL3732_01_laydown.jpg",
+      30: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JD4877_01_laydown.jpg",
+      31: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IX5196_01_laydown.jpg",
+      32: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JE9023_01_laydown.jpg",
+      33: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IY4138_01_laydown.jpg",
+      34: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KX0842_01_laydown.jpg",
+      35: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JE9020_01_laydown.jpg",
+      36: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IX1247_01_laydown.jpg",
+      37: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/HD7235_01_laydown.jpg",
+      39: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IU0217_01_laydown.jpg",
+      41: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JZ2137_01_laydown.jpg",
+      47: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JP1233_01_laydown.jpg",
+      48: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/IY2327_01_laydown.jpg",
+      // Golf
+      17: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JY5477_01_laydown.jpg",
+      24: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JF0983_01_laydown.jpg",
+      27: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JY5432_01_laydown.jpg",
+      29: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/JY5481_01_laydown.jpg",
+      40: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KB6793_01_laydown.jpg",
+      // Running
+      16: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/HN1067_01_laydown.jpg",
+      43: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/KD6975_01_laydown.jpg",
+    };
+
+        const products = [
+            { id: 1, name: "Áo Tank Top Thể Thao 3 Sọc AEROREADY Designed To Move Nam Đen GM2130", price: 450000, category: "Gym & Training", link: "https://s.shopee.vn/gNkJG77tl", img: productImgMap[1], sold: 1240, rating: 4.9 },
+            { id: 2, name: "Áo Đấu Sân Nhà Liverpool FC 26/27 Home Jersey Men Burgundy KA6852", price: 2000000, category: "Bóng Đá", link: "https://s.shopee.vn/BRTiUpw2L", img: productImgMap[2], sold: 892, rating: 4.95 },
+            { id: 3, name: "Áo Đấu Sân Nhà FC Bayern 26/27 Home Jersey Men Red KQ6513", price: 2000000, category: "Bóng Đá", link: "https://s.shopee.vn/5q5qSwgp4X", img: productImgMap[3], sold: 756, rating: 4.92 },
+            { id: 4, name: "Áo Tank Top AEROREADY Designed To Move Sport 3-Stripes Nam Trắng GM2158", price: 475000, category: "Gym & Training", link: "https://s.shopee.vn/AKYFpFds0N", img: productImgMap[4], sold: 980, rating: 4.88 },
+            { id: 5, name: "Ba Lô Badge of Sport Classic Unisex Đen HG0349", price: 800000, category: "Lifestyle", link: "https://s.shopee.vn/BRTibNXB5", img: productImgMap[5], sold: 1450, rating: 4.85 },
+            { id: 6, name: "Túi Duffel Linear Siêu Nhỏ Unisex Hồng KE5702", price: 650000, category: "Lifestyle", link: "https://s.shopee.vn/4VaSsaaoSI", img: productImgMap[6], sold: 620, rating: 4.7 },
+            { id: 7, name: "Áo Thun Messi House of Tiro Nam Trắng KH0334", price: 1000000, category: "Bóng Đá", link: "https://s.shopee.vn/5fmQGkwqZi", img: productImgMap[7], sold: 2100, rating: 4.97 },
+            { id: 8, name: "Quần Legging Hyperglam 3 Inch Nữ Đen IN9299", price: 900000, category: "Gym & Training", link: "https://s.shopee.vn/50WjTYQY2D", img: productImgMap[8], sold: 780, rating: 4.82 },
+            { id: 9, name: "Áo Thun Ngắn Tay Nam Trắng IK8683", price: 950000, category: "Lifestyle", link: "https://s.shopee.vn/2LVyIfhiip", img: productImgMap[9], sold: 1340, rating: 4.8 },
+            { id: 10, name: "Áo Polo 3-Stripes Performance Nam Trắng EJ0926", price: 920000, category: "Lifestyle", link: "https://s.shopee.vn/4qDJHIJZqr", img: productImgMap[10], sold: 910, rating: 4.75 },
+            { id: 11, name: "Túi Thể Thao Nữ Đen IJ7478", price: 1100000, category: "Gym & Training", link: "https://s.shopee.vn/6pyNezyZiV", img: productImgMap[11], sold: 540, rating: 4.65 },
+            { id: 12, name: "Áo Thun Z.N.E. Nam Đen JE3069", price: 1150000, category: "Lifestyle", link: "https://s.shopee.vn/7KueFy9xti", img: productImgMap[12], sold: 1120, rating: 4.88 },
+            { id: 13, name: "Áo Thun Trefoil Essentials Nam Đỏ Burgundy JC9992", price: 700000, category: "Lifestyle", link: "https://s.shopee.vn/7AbE3heFJf", img: productImgMap[13], sold: 1340, rating: 4.79 },
+            { id: 14, name: "Ba Lô Unisex Đen IP9878", price: 1135000, category: "Lifestyle", link: "https://s.shopee.vn/40eCHw76Jv", img: productImgMap[14], sold: 670, rating: 4.72 },
+            { id: 15, name: "Áo Thun Camo Pack Nam Trắng H13500", price: 850000, category: "Lifestyle", link: "https://s.shopee.vn/183WeS8ZD", img: productImgMap[15], sold: 890, rating: 4.68 },
+            { id: 16, name: "Mũ Bóng Chày Unisex Xanh Da Trời HN1067", price: 450000, category: "Running", link: "https://s.shopee.vn/4ftt5GdoOC", img: productImgMap[16], sold: 1560, rating: 4.9 },
+            { id: 17, name: "Áo Polo Performance Trơn Nam Xanh Lá JY5477", price: 1500000, category: "Golf", link: "https://s.shopee.vn/4LH2gsV1es", img: productImgMap[17], sold: 420, rating: 4.85 },
+            { id: 18, name: "Áo Thun Graphic Tee Nam Trắng IW3252", price: 902500, category: "Lifestyle", link: "https://s.shopee.vn/902sFUZLQ8", img: productImgMap[18], sold: 980, rating: 4.77 },
+            { id: 19, name: "Mũ Bóng Chày New Logo Unisex Xanh Dương JP0393", price: 500000, category: "Lifestyle", link: "https://s.shopee.vn/4qDJHrJSmS", img: productImgMap[19], sold: 720, rating: 4.6 },
+            { id: 20, name: "Áo Thun Tập Luyện Train Essentials Nam Be JC5196", price: 650000, category: "Gym & Training", link: "https://s.shopee.vn/2LVyJIAZdS", img: productImgMap[20], sold: 1150, rating: 4.82 },
+            { id: 21, name: "Áo Thun Workout Essentials Base T-Shirt Nam Trắng KD5453", price: 450000, category: "Gym & Training", link: "https://s.shopee.vn/4VaStINEUk", img: productImgMap[21], sold: 1340, rating: 4.75 },
+            { id: 22, name: "Áo Thun Training Supply Sport 1 Nam Trắng IX6716", price: 902500, category: "Gym & Training", link: "https://s.shopee.vn/40eCIPBCKA", img: productImgMap[22], sold: 780, rating: 4.7 },
+            { id: 23, name: "Túi Duffel 3 Sọc Essentials Unisex Đen IP9863", price: 1100000, category: "Lifestyle", link: "https://s.shopee.vn/8V6behOFqB", img: productImgMap[23], sold: 930, rating: 4.88 },
+            { id: 24, name: "Áo Polo Ngắn Tay Nam Đen JF0983", price: 1140000, category: "Golf", link: "https://s.shopee.vn/1BK0vFpQtK", img: productImgMap[24], sold: 580, rating: 4.79 },
+            { id: 25, name: "Quần Short Chelsea 3 Gạch AEROREADY Essentials Nam Đen GL0022", price: 850000, category: "Gym & Training", link: "https://s.shopee.vn/AUrg2QUYKq", img: productImgMap[25], sold: 1020, rating: 4.65 },
+            { id: 26, name: "Túi Thể Thao Nữ Xám IJ8378", price: 950000, category: "Gym & Training", link: "https://s.shopee.vn/5VT05FlwiY", img: productImgMap[26], sold: 490, rating: 4.72 },
+            { id: 27, name: "Áo Polo Sọc Hai Màu Chuyên Dụng Nam Xanh Da Trời JY5432", price: 1100000, category: "Golf", link: "https://s.shopee.vn/8pjS3PLFWu", img: productImgMap[27], sold: 310, rating: 4.8 },
+            { id: 28, name: "Áo Thun 3 Gạch Essentials Nam Đen GL3732", price: 700000, category: "Lifestyle", link: "https://s.shopee.vn/1LdR7ezqh9", img: productImgMap[28], sold: 1670, rating: 4.85 },
+            { id: 29, name: "Áo Polo Performance Solid Nam Xanh Da Trời JY5481", price: 1500000, category: "Golf", link: "https://s.shopee.vn/1BK0vNIup8", img: productImgMap[29], sold: 450, rating: 4.9 },
+            { id: 30, name: "Áo Thun 3 Sọc Future Icons Nam Đen JD4877", price: 1050000, category: "Lifestyle", link: "https://s.shopee.vn/1VwrK0TCjQ", img: productImgMap[30], sold: 890, rating: 4.78 },
+            { id: 31, name: "Áo Thun 3 Sọc Future Icons Nam Đen IX5196", price: 950000, category: "Lifestyle", link: "https://s.shopee.vn/8fQ1rCFxDH", img: productImgMap[31], sold: 760, rating: 4.7 },
+            { id: 32, name: "Áo Polo Piqué Logo Nhỏ Essentials Nam Đen JE9023", price: 950000, category: "Lifestyle", link: "https://s.shopee.vn/3LOVVQCh9A", img: productImgMap[32], sold: 1240, rating: 4.82 },
+            { id: 33, name: "Áo Thun ALL SZN Nam Xám IY4138", price: 760000, category: "Lifestyle", link: "https://s.shopee.vn/4AxcUzrT4o", img: productImgMap[33], sold: 680, rating: 4.65 },
+            { id: 34, name: "Áo Thun Vietnam Celebration Tee Unisex Đỏ KX0842", price: 550000, category: "Lifestyle", link: "https://s.shopee.vn/3g1Lu5jY7Z", img: productImgMap[34], sold: 1520, rating: 4.92 },
+            { id: 35, name: "Áo Polo Piqué Logo Nhỏ Essentials Nam Trắng JE9020", price: 1100000, category: "Lifestyle", link: "https://s.shopee.vn/4LH2hKWqUD", img: productImgMap[35], sold: 920, rating: 4.8 },
+            { id: 36, name: "Quần Short Vải Thun Da Cá ALL SZN Nam Đen IX1247", price: 1100000, category: "Lifestyle", link: "https://s.shopee.vn/5VT05Uh7lY", img: productImgMap[36], sold: 580, rating: 4.7 },
+            { id: 37, name: "Mũ Bóng Chày Unisex Hồng HD7235", price: 475000, category: "Lifestyle", link: "https://s.shopee.vn/30lf6uoWF5", img: productImgMap[37], sold: 1340, rating: 4.85 },
+            { id: 38, name: "Túi Thể Thao Sport Bag Women Brown IC5083", price: 1100000, category: "Gym & Training", link: "https://s.shopee.vn/5L9ZtEEIC7", img: productImgMap[38], sold: 470, rating: 4.68 },
+            { id: 39, name: "Áo Thun Sport Graphic Cali Tee Men Trắng IU0217", price: 1100000, category: "Lifestyle", link: "https://s.shopee.vn/3g1LuCAxf0", img: productImgMap[39], sold: 810, rating: 4.75 },
+            { id: 40, name: "Áo Polo Performance Họa Tiết Vân Nổi Nam Trắng KB6793", price: 1500000, category: "Golf", link: "https://s.shopee.vn/7AbE4eBOWw", img: productImgMap[40], sold: 390, rating: 4.88 },
+            { id: 41, name: "Túi Duffel Favorite Unisex Đen JZ2137", price: 1900000, category: "Lifestyle", link: "https://s.shopee.vn/5VT05cLwxv", img: productImgMap[41], sold: 620, rating: 4.9 },
+            { id: 42, name: "Áo Đấu Sân Nhà Đội Tuyển Argentina 26 Phiên Bản Authentic Nam Trắng JM5897", price: 3000000, category: "Bóng Đá", link: "https://s.shopee.vn/qhAX3PUgT", img: productImgMap[42], sold: 1250, rating: 4.98 },
+            { id: 43, name: "Mũ Lưỡi Trai Siêu Nhẹ CLIMACOOL Running xadizero Unisex Trắng KD6975", price: 750000, category: "Running", link: "https://s.shopee.vn/5fmQHy5Sdo", img: productImgMap[43], sold: 980, rating: 4.82 },
+            { id: 44, name: "Áo Đấu Sân Nhà Germany 26 Home Jersey Men Trắng KD8363", price: 2200000, category: "Bóng Đá", link: "https://s.shopee.vn/2BCY7YgAQZ", img: productImgMap[44], sold: 740, rating: 4.9 },
+            { id: 45, name: "Áo Đấu Sân Nhà Argentina 26 Phiên Bản Messi Nam Trắng KA8117", price: 2300000, category: "Bóng Đá", link: "https://s.shopee.vn/BRTjuDm8S", img: productImgMap[45], sold: 1680, rating: 4.97 },
+            { id: 46, name: "Áo Đấu Sân Khách Real Madrid Mùa Giải 99/00 Nam Đen JW1992", price: 2300000, category: "Bóng Đá", link: "https://s.shopee.vn/9AMISSf6pX", img: productImgMap[46], sold: 920, rating: 4.85 },
+            { id: 47, name: "Ba Lô Classic Unisex Be JP1233", price: 1050000, category: "Lifestyle", link: "https://s.shopee.vn/9fIZ3OhCYD", img: productImgMap[47], sold: 580, rating: 4.72 },
+            { id: 48, name: "Quần Short Trefoil Essentials Nam Xanh Lá IY2327", price: 800000, category: "Lifestyle", link: "https://s.shopee.vn/AAEpeLmKLB", img: productImgMap[48], sold: 760, rating: 4.68 }
+        ]
+
+        let currentFilter = 'all'
+        let currentSearch = ''
+        let currentSort = 'newest'
+        let currentModalProduct = null
+
+        // Render category filter chips
+        function renderCategoryFilters() {
+            const container = document.getElementById('category-filters')
+            const categories = ['all', 'Gym & Training', 'Bóng Đá', 'Lifestyle', 'Golf', 'Running']
+            const labels = {
+                'all': 'Tất cả',
+                'Gym & Training': 'Gym & Training',
+                'Bóng Đá': 'Bóng Đá & Jersey',
+                'Lifestyle': 'Phong Cách Sống',
+                'Golf': 'Đánh Gôn',
+                'Running': 'Chạy Bộ'
+            }
+            
+            container.innerHTML = ''
+            
+            categories.forEach(cat => {
+                const btn = document.createElement('button')
+                btn.className = `category-chip px-5 py-2 text-sm font-medium rounded-3xl border transition-all whitespace-nowrap ${cat === 'all' ? 'active border-[#E31837] bg-[#E31837] text-white' : 'border-zinc-700 hover:border-zinc-400 bg-zinc-900 text-zinc-300'}`
+                btn.innerHTML = labels[cat]
+                btn.onclick = () => {
+                    currentFilter = cat
+                    // Update active styles
+                    document.querySelectorAll('#category-filters button').forEach(b => b.classList.remove('active', 'border-[#E31837]', 'bg-[#E31837]', 'text-white'))
+                    btn.classList.add('active', 'border-[#E31837]', 'bg-[#E31837]', 'text-white')
+                    filterAndRenderProducts()
+                }
+                container.appendChild(btn)
+            })
+        }
+
+        // Filter + Sort + Render products
+        function filterAndRenderProducts() {
+            const grid = document.getElementById('products-grid')
+            const noResults = document.getElementById('no-results')
+            grid.innerHTML = ''
+            
+            let filtered = products
+            
+            // Category filter
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(p => p.category === currentFilter)
+            }
+            
+            // Search filter
+            if (currentSearch) {
+                const term = currentSearch.toLowerCase()
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(term) || 
+                    p.category.toLowerCase().includes(term)
+                )
+            }
+            
+            // Sort
+            const sortValue = document.getElementById('sort-select').value || currentSort
+            
+            if (sortValue === 'price-low') {
+                filtered.sort((a, b) => a.price - b.price)
+            } else if (sortValue === 'price-high') {
+                filtered.sort((a, b) => b.price - a.price)
+            } else if (sortValue === 'popular') {
+                filtered.sort((a, b) => b.sold - a.sold)
+            } else {
+                // newest (default by id desc)
+                filtered.sort((a, b) => b.id - a.id)
+            }
+            
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden')
+                grid.classList.add('hidden')
+                return
+            } else {
+                noResults.classList.add('hidden')
+                grid.classList.remove('hidden')
+            }
+            
+            // Render cards
+            filtered.forEach(product => {
+                const card = createProductCard(product)
+                grid.appendChild(card)
+            })
+        }
+
+        function createProductCard(product) {
+            const card = document.createElement('div')
+            const isHot = product.sold > 1000 || product.category === 'Bóng Đá'
+            card.className = `product-card ${isHot ? 'hot-product' : ''} bg-zinc-900 border border-zinc-700 rounded-3xl overflow-hidden group flex flex-col h-full`
+            
+            const priceFormatted = new Intl.NumberFormat('vi-VN', { 
+                style: 'currency', 
+                currency: 'VND',
+                maximumFractionDigits: 0 
+            }).format(product.price)
+
+            // Generate a fake original price (15-25% higher) for discount effect
+            const discountPct = product.category === 'Bóng Đá' ? 20 : (product.price > 1000000 ? 15 : 18)
+            const origPrice = Math.round(product.price * (1 + discountPct/100) / 50000) * 50000
+            const origPriceFormatted = new Intl.NumberFormat('vi-VN', { 
+                style: 'currency', currency: 'VND', maximumFractionDigits: 0 
+            }).format(origPrice)
+            
+            const soldFormatted = product.sold >= 1000 ? (product.sold / 1000).toFixed(1) + 'k' : product.sold
+            
+            card.innerHTML = `
+                <div class="relative">
+                    <!-- Image -->
+                    <div class="aspect-square bg-zinc-800 overflow-hidden">
+                        <img src="${product.img}" 
+                             class="product-img w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                             alt="${product.name}"
+                             loading="lazy"
+                             onerror="this.onerror=null;this.src=getFallbackImg('${product.category}')">
+                    </div>
+                    
+                    <!-- Badges -->
+                    <div class="absolute top-3 left-3 flex flex-col gap-y-1.5">
+                        ${product.category === 'Bóng Đá' ? 
+                            `<div class="trend-badge text-white text-[10px] font-bold px-3 py-0.5 rounded-2xl shadow flex items-center gap-x-1 w-fit">
+                                <i class="fa-solid fa-fire text-xs"></i> 
+                                <span>HOT 2026</span>
+                             </div>` : ''}
+                        ${product.price > 1500000 ? 
+                            `<div class="bg-black/70 text-white text-[10px] px-2.5 py-px rounded-2xl w-fit font-medium">PREMIUM</div>` : ''}
+                        <div class="discount-badge w-fit">-${discountPct}%</div>
+                    </div>
+                    
+                    <div class="absolute top-3 right-3 bg-black/60 text-emerald-400 text-xs font-medium px-2 py-0.5 rounded-2xl backdrop-blur flex items-center gap-x-1">
+                        <i class="fa-solid fa-check text-[9px]"></i>
+                        <span class="font-mono text-[10px]">CHÍNH HÃNG</span>
+                    </div>
+
+                    ${isHot ? `<div class="absolute bottom-3 left-3 right-3 flex items-center gap-x-1.5 bg-black/60 backdrop-blur rounded-xl px-2.5 py-1.5">
+                        <div class="flex -space-x-1">
+                            ${[11,22,33].map(n=>`<div class="w-4 h-4 rounded-full bg-zinc-600 border border-zinc-800 overflow-hidden"><img src="https://picsum.photos/id/${n}/16/16"></div>`).join('')}
+                        </div>
+                        <span class="text-[10px] text-zinc-300">${Math.floor(Math.random()*8+3)} người đang xem</span>
+                    </div>` : ''}
+                </div>
+                
+                <div class="p-4 flex flex-col flex-1">
+                    <div class="flex-1">
+                        <div class="text-xs text-zinc-400 mb-1">${product.category}</div>
+                        <h3 class="font-medium text-[15px] leading-snug line-clamp-2 tracking-[-0.2px]">${product.name}</h3>
+                    </div>
+                    
+                    <div class="mt-auto pt-4">
+                        <!-- Price + Stats -->
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <div class="original-price">${origPriceFormatted}</div>
+                                <span class="font-mono text-xl font-semibold tracking-tighter text-[#E31837]">${priceFormatted}</span>
+                            </div>
+                            
+                            <div class="text-right">
+                                <div class="flex items-center justify-end text-xs">
+                                    <i class="fa-solid fa-star text-amber-400 mr-0.5"></i> 
+                                    <span class="font-medium text-white">${product.rating}</span>
+                                </div>
+                                <div class="text-[10px] text-zinc-400">${soldFormatted} đã bán</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex gap-x-2">
+                            <button onclick="quickView(${product.id}); event.stopImmediatePropagation();" 
+                                    class="w-10 h-10 shrink-0 text-xs font-medium border border-zinc-600 hover:bg-zinc-800 active:bg-zinc-700 transition-colors rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </button>
+                            
+                            <a href="${product.link}" target="_blank" rel="noopener noreferrer" onclick="event.stopImmediatePropagation();"
+                                class="shopee-btn shopee-orange flex-1 text-xs font-bold text-white py-2.5 rounded-2xl flex items-center justify-center gap-x-1.5 transition-all">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 7H3a1 1 0 0 0-1 1v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1zm-9 9a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/><path d="M15 5a3 3 0 0 0-6 0H7a5 5 0 0 1 10 0h-2z"/></svg>
+                                <span>MUA NGAY SHOPEE</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `
+            
+            // Click on card opens quick view (except buttons/links)
+            card.onclick = (e) => {
+                if (!e.target.closest('button') && !e.target.closest('a')) {
+                    quickView(product.id)
+                }
+            }
+            
+            return card
+        }
+
+        function filterByCategory(category) {
+            currentFilter = category
+            // Update chips
+            document.querySelectorAll('#category-filters button').forEach(btn => {
+                btn.classList.remove('active', 'border-[#E31837]', 'bg-[#E31837]', 'text-white')
+                if ((category === 'all' && btn.textContent === 'Tất cả') || 
+                    btn.textContent.includes(category.split(' ')[0])) {
+                    btn.classList.add('active', 'border-[#E31837]', 'bg-[#E31837]', 'text-white')
+                }
+            })
+            filterAndRenderProducts()
+            
+            // Scroll to products
+            document.getElementById('products-section').scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+
+        function quickView(productId) {
+            const product = products.find(p => p.id === productId)
+            if (!product) return
+            
+            currentModalProduct = product
+            
+            document.getElementById('modal-image').src = product.img
+            document.getElementById('modal-name').innerHTML = product.name
+            document.getElementById('modal-category').innerHTML = product.category
+            document.getElementById('modal-price').innerHTML = new Intl.NumberFormat('vi-VN', { 
+                style: 'currency', currency: 'VND', maximumFractionDigits: 0 
+            }).format(product.price)
+            
+            document.getElementById('quick-view-modal').classList.remove('hidden')
+            document.getElementById('quick-view-modal').classList.add('flex')
+        }
+        
+        function hideQuickView() {
+            const modal = document.getElementById('quick-view-modal')
+            modal.classList.remove('flex')
+            modal.classList.add('hidden')
+        }
+        
+        function buyFromModal() {
+            if (currentModalProduct) {
+                window.open(currentModalProduct.link, '_blank', 'noopener,noreferrer')
+                hideQuickView()
+            }
+        }
+        
+        function buyProduct(productId) {
+            const product = products.find(p => p.id === productId)
+            if (product) {
+                window.open(product.link, '_blank')
+            }
+        }
+        
+        function resetFilters() {
+            currentFilter = 'all'
+            currentSearch = ''
+            document.getElementById('search-input').value = ''
+            
+            // Reset category chips
+            document.querySelectorAll('#category-filters button').forEach((btn, index) => {
+                btn.classList.remove('active', 'border-[#E31837]', 'bg-[#E31837]', 'text-white')
+                if (index === 0) btn.classList.add('active', 'border-[#E31837]', 'bg-[#E31837]', 'text-white')
+            })
+            
+            filterAndRenderProducts()
+        }
+
+        // Search handler
+        function setupSearch() {
+            const input = document.getElementById('search-input')
+            
+            input.addEventListener('input', () => {
+                currentSearch = input.value.trim()
+                filterAndRenderProducts()
+            })
+            
+            // Allow pressing Enter to focus grid
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' })
+                }
+            })
+        }
+        
+        function setupSort() {
+            const select = document.getElementById('sort-select')
+            select.addEventListener('change', () => {
+                currentSort = select.value
+                filterAndRenderProducts()
+            })
+        }
+
+        function showContactModal() {
+            const modalHTML = `
+                <div class="fixed inset-0 bg-black/70 backdrop-blur z-[200] flex items-center justify-center p-4" onclick="this.remove()">
+                    <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 border border-zinc-700 rounded-3xl max-w-md w-full p-8">
+                        <div class="flex justify-between mb-6">
+                            <div>
+                                <div class="font-semibold text-2xl">Liên hệ hỗ trợ</div>
+                                <div class="text-xs text-emerald-400 mt-1">Phản hồi trong vòng 5 phút</div>
+                            </div>
+                            <button onclick="this.closest('.fixed').remove()" class="text-3xl leading-none text-zinc-400 hover:text-white">&times;</button>
+                        </div>
+                        
+                        <div class="space-y-4 text-sm">
+                            <a href="https://shopee.vn" target="_blank" class="flex items-center justify-between px-5 py-4 bg-zinc-800 hover:bg-zinc-700 transition rounded-2xl">
+                                <div class="flex items-center gap-x-3">
+                                    <i class="fa-brands fa-shopify text-2xl text-orange-400"></i>
+                                    <div>
+                                        <div class="font-medium">Chat Shopee</div>
+                                        <div class="text-xs text-zinc-400">AffilEx_Adidas</div>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                            
+                            <a href="#" class="flex items-center justify-between px-5 py-4 bg-zinc-800 hover:bg-zinc-700 transition rounded-2xl">
+                                <div class="flex items-center gap-x-3">
+                                    <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
+                                    <div>
+                                        <div class="font-medium">Zalo / WhatsApp</div>
+                                        <div class="text-xs text-zinc-400">0901 234 567</div>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-6 text-xs text-center text-zinc-400">
+                            Hỗ trợ 24/7 • Kể cả ngày lễ
+                        </div>
+                    </div>
+                </div>
+            `
+            document.body.insertAdjacentHTML('beforeend', modalHTML)
+        }
+
+        // Initialize everything
+        function initializeWebsite() {
+            initializeTailwind()
+            
+            // Render initial products
+            renderCategoryFilters()
+            filterAndRenderProducts()
+            
+            // Setup interactions
+            setupSearch()
+            setupSort()
+            
+            // Bonus: Keyboard shortcut "/" focuses search
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault()
+                    document.getElementById('search-input').focus()
+                }
+            })
+            
+            // Easter egg: Press "A" for Adidas logo animation (fun)
+            let aCount = 0
+            document.addEventListener('keypress', function(e) {
+                if (e.key.toLowerCase() === 'a') {
+                    aCount++
+                    if (aCount >= 5) {
+                        const logo = document.querySelector('.fa-shield-halved')
+                        if (logo) {
+                            logo.classList.add('fa-spin')
+                            setTimeout(() => logo.classList.remove('fa-spin'), 1200)
+                        }
+                        aCount = 0
+                    }
+                }
+            })
+            
+            // Initial sort hint in console (dev)
+            console.log('%c[Adidas Vault] Website Adidas 2026 đã sẵn sàng. Tất cả 48 sản phẩm đã được load.', 'color:#E31837')
+        }
+        
+        // ── CLOCK ──────────────────────────────────────────────
+        function updateClock() {
+            const now = new Date()
+            const h = String(now.getHours()).padStart(2, '0')
+            const m = String(now.getMinutes()).padStart(2, '0')
+            const s = String(now.getSeconds()).padStart(2, '0')
+            const el = document.getElementById('wc-time')
+            if (el) el.textContent = `${h}:${m}:${s}`
+        }
+        updateClock()
+        setInterval(updateClock, 1000)
+
+        // ── WEATHER (Open-Meteo, no API key) ───────────────────
+        const WMO_ICONS = {
+            0:'☀️', 1:'🌤️', 2:'⛅', 3:'☁️',
+            45:'🌫️', 48:'🌫️',
+            51:'🌦️', 53:'🌦️', 55:'🌧️',
+            61:'🌧️', 63:'🌧️', 65:'🌧️',
+            71:'❄️', 73:'❄️', 75:'❄️', 77:'🌨️',
+            80:'🌦️', 81:'🌧️', 82:'⛈️',
+            85:'🌨️', 86:'🌨️',
+            95:'⛈️', 96:'⛈️', 99:'⛈️'
+        }
+        const WMO_DESC = {
+            0:'Trời quang', 1:'Ít mây', 2:'Có mây', 3:'Nhiều mây',
+            45:'Sương mù', 48:'Sương mù',
+            51:'Mưa nhẹ', 53:'Mưa nhẹ', 55:'Mưa nhẹ',
+            61:'Mưa', 63:'Mưa', 65:'Mưa to',
+            71:'Tuyết nhẹ', 73:'Tuyết', 75:'Tuyết to', 77:'Hạt tuyết',
+            80:'Mưa rào', 81:'Mưa rào', 82:'Mưa rào mạnh',
+            85:'Mưa tuyết', 86:'Mưa tuyết',
+            95:'Dông', 96:'Dông + mưa đá', 99:'Dông lớn'
+        }
+
+        async function fetchWeather() {
+            try {
+                // Get approximate location from IP first, then open-meteo
+                const geoRes = await fetch('https://ipapi.co/json/')
+                const geo = await geoRes.json()
+                const lat = geo.latitude || 10.8231
+                const lon = geo.longitude || 106.6297
+                const city = geo.city || 'TP.HCM'
+
+                const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weathercode&timezone=auto`
+                const res = await fetch(url)
+                const data = await res.json()
+                const temp = Math.round(data.current.temperature_2m)
+                const code = data.current.weathercode
+
+                document.getElementById('wc-icon').textContent = WMO_ICONS[code] || '🌡️'
+                document.getElementById('wc-temp').textContent = `${temp}°C`
+                document.getElementById('wc-desc').textContent = `${city} • ${WMO_DESC[code] || 'N/A'}`
+            } catch(e) {
+                document.getElementById('wc-desc').textContent = 'TP.HCM'
+                document.getElementById('wc-temp').textContent = ''
+                document.getElementById('wc-icon').textContent = '🌡️'
+            }
+        }
+        fetchWeather()
+        // Refresh weather every 10 minutes
+        setInterval(fetchWeather, 10 * 60 * 1000)
+
+        // ── FLASH SALE COUNTDOWN ──────────────────────────────────
+        function initCountdown() {
+            // Set end of day countdown target
+            const now = new Date()
+            const target = new Date(now)
+            target.setHours(23, 59, 59, 0)
+            
+            function tick() {
+                const diff = target - new Date()
+                if (diff <= 0) {
+                    // Reset to next day
+                    target.setDate(target.getDate() + 1)
+                }
+                const h = Math.floor(diff / 3600000)
+                const m = Math.floor((diff % 3600000) / 60000)
+                const s = Math.floor((diff % 60000) / 1000)
+                const pad = n => String(n).padStart(2, '0')
+                const hEl = document.getElementById('cd-h')
+                const mEl = document.getElementById('cd-m')
+                const sEl = document.getElementById('cd-s')
+                if (hEl) hEl.textContent = pad(h)
+                if (mEl) mEl.textContent = pad(m)
+                if (sEl) sEl.textContent = pad(s)
+            }
+            tick()
+            setInterval(tick, 1000)
+        }
+        initCountdown()
+
+        // ── MOBILE STICKY CTA ─────────────────────────────────────
+        function addStickyMobileCTA() {
+            const bar = document.createElement('div')
+            bar.className = 'sticky-cta md:hidden'
+            bar.innerHTML = `
+                <div class="flex-1">
+                    <div class="text-xs text-zinc-400">🔥 Flash Sale đang diễn ra</div>
+                    <div class="text-sm font-semibold">Mua ngay nhận ưu đãi!</div>
+                </div>
+                <a href="https://shopee.vn/adidas_official_store_vn" target="_blank" rel="noopener"
+                   class="shopee-orange text-white text-sm font-bold px-5 py-2.5 rounded-2xl flex items-center gap-x-1.5 shrink-0">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 7H3a1 1 0 0 0-1 1v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1zm-9 9a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/><path d="M15 5a3 3 0 0 0-6 0H7a5 5 0 0 1 10 0h-2z"/></svg>
+                    Shopee
+                </a>
+            `
+            document.body.appendChild(bar)
+            // Add bottom padding to prevent content being hidden by sticky bar
+            document.body.style.paddingBottom = '72px'
+        }
+        addStickyMobileCTA()
+
+        // Boot
+        window.onload = initializeWebsite
+    </script>
+</body>
+</html>
